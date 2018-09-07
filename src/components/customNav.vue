@@ -5,9 +5,9 @@
             <div class="head">
                 <nav class="navbar">
                     <div class="navbar-brand">
-                        <a class="navbar-item" href="/">
+                        <router-link class="navbar-item" to="/">
                             <img src="/static/construction/WIP.jpg" class="logo" />
-                        </a>
+                        </router-link>
                         <!--
                     Using the v-on: directive to listen for the click event and toggle the data property showNav. Also, using the v-bind: directive to reactively update the class attribute 'is-active' based on the showNav property.
                     -->
@@ -22,9 +22,9 @@
                   -->
                     <div class="navbar-menu" :class="{ 'is-active': showNav }">
                         <div class="navbar-end">
-                            <a class="navbar-item" href="/about">
-                                About
-                            </a>
+                            <router-link class="navbar-item" to="/tracker">
+                                Fuel tracker
+                            </router-link>
                             <a class="navbar-item" href="/path">
                                 Path
                             </a>
@@ -34,11 +34,6 @@
                         </div>
                     </div>
                 </nav>
-            </div>
-            <!-- Hero content: will be in the middle -->
-            <div class="hero-body">
-                <div class="container has-text-centered">
-                </div>
             </div>
         </section>
     </div>

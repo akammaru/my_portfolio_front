@@ -1,6 +1,8 @@
 <template>
     <div>
-
+        <p style="color: greenyellow">
+            This should be homepage.
+        </p>
     </div>
 </template>
 
