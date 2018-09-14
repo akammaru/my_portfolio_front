@@ -22,7 +22,8 @@
             customNav
         },
         beforeCreate() {
-            return this.$store.getters.getTranslations
+            let value = this.$store.getters.getTranslations
+            console.warn(value)
         }
 
     }
