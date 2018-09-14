@@ -1,28 +1,36 @@
 <template>
-  <div id="app">
-      <custom-nav />
-    <router-view/>
-  </div>
+    <div id="app">
+        <custom-nav/>
+        <router-view/>
+        <div v-if="debug">
+            <p>debug mode is active</p>
+        </div>
+    </div>
 </template>
 
 <script>
     import customNav from '@/components/customNav'
-export default {
-  data() {
-      return {
+    import ENV from '../env'
 
-      }
-  },
-    components: {
-      customNav
+    export default {
+        data() {
+            return {
+                debug: ENV.debug
+            }
+        },
+        components: {
+            customNav
+        },
+        beforeCreate() {
+            return this.$store.getters.getTranslations
+        }
+
     }
-
-}
 </script>
 
 <style>
-#app {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+    #app {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
 </style>
