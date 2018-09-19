@@ -20,12 +20,7 @@
         },
         components: {
             customNav
-        },
-        beforeCreate() {
-            let value = this.$store.getters.getTranslations
-            console.warn(value)
         }
-
     }
 </script>
 

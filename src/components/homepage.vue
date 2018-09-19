@@ -3,23 +3,19 @@
         <p style="color: greenyellow">
             This should be homepage.
 
-            lets test his: {{ language }}
+            {{ label('language.english') }}
         </p>
     </div>
 </template>
 
 <script>
-    import ENV from "../../env"
     export default {
         data() {
             return {
-
+              label: aka.lang.getLabel
             }
         },
         computed: {
-            language () {
-                return ENV.default_language
-            }
         }
     }
 </script>

@@ -5,6 +5,9 @@ import App from './App'
 import router from './router'
 import store from './store/index'
 
+//helpers
+import '@/classes'
+
 Vue.config.productionTip = false
 
 Vue.use(Vuex)
@@ -17,5 +20,8 @@ new Vue({
   router,
   store,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  created() {
+    store.dispatch('translations/get')
+  }
 })
