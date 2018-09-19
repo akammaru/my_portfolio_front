@@ -1,23 +1,32 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+    <div id="app">
+        <custom-nav/>
+        <router-view/>
+        <div v-if="debug">
+            <p>debug mode is active</p>
+        </div>
+    </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+    import customNav from '@/components/customNav'
+    import ENV from '../env'
+
+    export default {
+        data() {
+            return {
+                debug: ENV.debug
+            }
+        },
+        components: {
+            customNav
+        }
+    }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+    #app {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
 </style>
