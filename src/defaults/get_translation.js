@@ -1,4 +1,0 @@
-import
-getTranslation(label, category) {
-
-}

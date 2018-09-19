@@ -20,11 +20,7 @@
         },
         components: {
             customNav
-        },
-        beforeCreate() {
-            return this.$store.getters.getTranslations
         }
-
     }
 </script>
 

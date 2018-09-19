@@ -2,8 +2,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+//helpers
+import '@/classes'
+
 //store imports
-import translations from './general/translations'
+import translations from './modules/translations'
 
 Vue.use(Vuex)
 
