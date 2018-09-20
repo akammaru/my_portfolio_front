@@ -50,7 +50,6 @@
         },
         methods: {
             selectLanguage (language) {
-                console.log(language)
                 this.$store.dispatch('translations/get', language)
             }
         }

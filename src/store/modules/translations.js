@@ -27,7 +27,6 @@ export default {
          * @returns {Promise}
          */
         get({commit, state}, language = ENV.default_language) {
-            console.warn('ello?', language)
             return new Promise((resolve, reject) => {
                 // If we don't have the labels yet, or we'd like to force a reload we retrieve the labels from the api.
                 if (_.isEmpty(state.labels) || state.current !== language) {
