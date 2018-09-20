@@ -31,6 +31,8 @@
                             <a class="navbar-item" href="/blog">
                                 Blog
                             </a>
+                            <img src="/static/img/flags/nl.png" class="flag" v-on:click="selectLanguage('nl')" />
+                            <img src="/static/img/flags/en.png" class="flag" v-on:click="selectLanguage('en')" />
                         </div>
                     </div>
                 </nav>
@@ -44,6 +46,11 @@
         data() {
             return {
                 showNav: false
+            }
+        },
+        methods: {
+            selectLanguage (language) {
+                this.$store.dispatch('translations/get', language)
             }
         }
     }
