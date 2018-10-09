@@ -2,6 +2,7 @@ import store from '@/store'
 
 const language = {
     /**
+     * gets translations for labels. (short texts)
      *
      * @param key   always a category.key format.
      * @returns {string}
@@ -25,9 +26,37 @@ const language = {
         }
         return ''
     },
+    /**
+     * gets translations for long texts
+     *
+     * @param key
+     * @returns string
+     */
+    getTextTranslation(key) {
+        if (_.isUndefined(key) || _.isEmpty(key)) {
+            return ''
+        }
 
-    reloadLang() {
-        store.dispatch('translations/get', true)
+        let text = store.state.translations.text
+
+        if(!_.isEmpty(text)) {
+            console.log('text not empty')
+            for (let current of text) {
+                console.log('running through')
+                if (current.component === key) {
+                    console.log('found it!')
+                    return current.text
+                }
+            }
+        }
+    },
+    /**
+     * gets longtexts from api, only for current page.
+     *
+     * @param location
+     */
+    fetchTexts (location) {
+        store.dispatch('translations/getText', location)
     }
 }
 
