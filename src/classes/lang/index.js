@@ -40,11 +40,8 @@ const language = {
         let text = store.state.translations.text
 
         if(!_.isEmpty(text)) {
-            console.log('text not empty')
             for (let current of text) {
-                console.log('running through')
                 if (current.component === key) {
-                    console.log('found it!')
                     return current.text
                 }
             }
